@@ -161,7 +161,8 @@ Running this will check that your project adheres to the contracts you've define
 Running using pre-commit
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is possible to run ``import-linter`` as a ``pre-commit`` hook.
+It is possible to run ``import-linter`` as a ``pre-commit`` hook. However, to analyze your project,
+this hook must run from within a virtual environment with your package installed.
 
 Assuming you're running pre-commit from within your virtual environment,
 you can include this in your ``.pre-commit-config.yaml`` file:
