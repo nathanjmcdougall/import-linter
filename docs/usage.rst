@@ -158,5 +158,34 @@ Running this will check that your project adheres to the contracts you've define
 
     lint-imports --verbose
 
+Running using pre-commit
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+It is possible to run ``import-linter`` as a ``pre-commit`` hook.
+
+Assuming you're running pre-commit from within your virtual environment,
+you can include this in your ``.pre-commit-config.yaml`` file:
+
+.. code-block:: yaml
+
+  repos:
+  - repo: local
+      hooks:
+      - id: lint_imports
+        name: "Lint imports"
+        entry: "lint-imports"  # Adapt with custom arguments, if need be.
+        language: system
+        pass_filenames: false
+
+Or, if you prefer pre-commit to install Import Linter separately, replacing ``<import linter version>``
+with the version number of Import Linter you wish to use.
+
+.. code-block:: yaml
+
+  - repo: https://github.com/seddonym/import-linter
+    rev: <import linter version>
+    hooks:
+      - id: import-linter
+
 .. _namespace packages: https://docs.python.org/3/glossary.html#term-namespace-package
 .. _portion: https://docs.python.org/3/glossary.html#term-portion
